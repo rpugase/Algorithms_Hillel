@@ -1,12 +1,15 @@
 #include <iostream>
+#include <vector>
 #include "first_lesson.h"
 
 using namespace std;
 
 void test_is_prime();
+void test_binary_search();
 
 int main() {
     test_is_prime();
+    test_binary_search();
     return 0;
 }
 
@@ -18,5 +21,18 @@ void test_is_prime() {
     assert(is_prime(1000000007)); // true;
     assert(!is_prime(1000000011)); // false;
 
-    cout << "TEST PASSED";
+    cout << __func__ << " PASSED" << endl;
+}
+
+void test_binary_search() {
+    vector<int> arr = {1, 4, 8, 11, 21, 23, 24, 64, 70, 84, 125, 704, 1099, 1200, 1201, 1202, 2000};
+
+    assert(binary_search(arr, 8)); // YES
+    assert(!binary_search(arr, 10)); // NO
+    assert(binary_search(arr, 70)); // YES
+    assert(!binary_search(arr, 1098)); // NO
+    assert(binary_search(arr, 1202)); // YES
+    assert(!binary_search(arr, 1999)); // NO
+
+    cout << __func__ << " PASSED" << endl;
 }

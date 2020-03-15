@@ -1,4 +1,5 @@
 #include <cmath>
+#include <vector>
 
 bool is_prime(int n) {
 
@@ -13,3 +14,18 @@ bool is_prime(int n) {
     return true;
 }
 
+bool binary_search(const std::vector<int> &arr, int n) {
+    unsigned left = 0;
+    unsigned right = arr.size() - 1;
+
+    while (left <= right) {
+        unsigned medium = (right + left) / 2;
+
+        if (arr[medium] == n) return true;
+
+        if (arr[medium] < n) left = medium + 1;
+        else right = medium - 1;
+    }
+
+    return false;
+}
