@@ -1,6 +1,7 @@
 #include <cmath>
 #include <vector>
 
+// 1
 bool is_prime(int n) {
 
     if (n == 1) return false;
@@ -14,6 +15,7 @@ bool is_prime(int n) {
     return true;
 }
 
+// 3
 bool binary_search(const std::vector<int> &arr, int n) {
     unsigned left = 0;
     unsigned right = arr.size() - 1;
@@ -30,6 +32,7 @@ bool binary_search(const std::vector<int> &arr, int n) {
     return false;
 }
 
+// 4 - O(n)
 int count_n(const std::vector<int> &arr, unsigned left_bound, unsigned right_bound) {
     unsigned result = 0;
 
@@ -41,6 +44,7 @@ int count_n(const std::vector<int> &arr, unsigned left_bound, unsigned right_bou
     return result;
 }
 
+// 4 - O(logn)
 int count_logn(const std::vector<int> &arr, unsigned left_bound, unsigned right_bound) {
     unsigned left_result = 0;
     unsigned right_result = 0;
@@ -78,6 +82,7 @@ int count_logn(const std::vector<int> &arr, unsigned left_bound, unsigned right_
     return right_result - left_result;
 }
 
+// 6
 std::vector<int> reverse_array(std::vector<int> arr) {
     unsigned int size_array = arr.size();
     std::vector<int> reserved = std::vector<int>(size_array);
