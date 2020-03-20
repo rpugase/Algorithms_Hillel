@@ -7,11 +7,13 @@ using namespace std;
 void test_is_prime();
 void test_binary_search();
 void test_count_n();
+void test_count_logn();
 
 int main() {
     test_is_prime();
     test_binary_search();
     test_count_n();
+    test_count_logn();
     return 0;
 }
 
@@ -47,6 +49,18 @@ void test_count_n() {
     assert(count_n(arr, 20, 100) == 6); // 6
     assert(count_n(arr, 1000, 2000) == 5); // 5
     assert(count_n(arr, 84, 84) == 1); // 1
+
+    cout << __func__ << " PASSED" << endl;
+}
+
+void test_count_logn() {
+    vector<int> arr = {1, 4, 8, 11, 21, 23, 24, 64, 70, 84, 125, 704, 1099, 1200, 1201, 1202, 2000};
+
+    assert(count_logn(arr, 1, 10) == 3); // 3
+    assert(count_logn(arr, 200, 700) == 0); // 0
+    assert(count_logn(arr, 20, 100) == 6); // 6
+    assert(count_logn(arr, 1000, 2000) == 5); // 5
+    assert(count_logn(arr, 84, 84) == 1); // 1
 
     cout << __func__ << " PASSED" << endl;
 }
