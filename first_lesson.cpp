@@ -29,3 +29,14 @@ bool binary_search(const std::vector<int> &arr, int n) {
 
     return false;
 }
+
+int count_n(const std::vector<int> &arr, unsigned left_bound, unsigned right_bound) {
+    unsigned result = 0;
+
+    unsigned size_array = arr.size();
+    for (unsigned i = 0; i < size_array; i++) {
+        if (arr[i] >= left_bound && arr[i] <= right_bound) result++;
+    }
+
+    return result;
+}
