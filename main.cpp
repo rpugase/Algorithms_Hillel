@@ -8,12 +8,14 @@ void test_is_prime();
 void test_binary_search();
 void test_count_n();
 void test_count_logn();
+void test_reverse_array();
 
 int main() {
     test_is_prime();
     test_binary_search();
     test_count_n();
     test_count_logn();
+    test_reverse_array();
     return 0;
 }
 
@@ -61,6 +63,14 @@ void test_count_logn() {
     assert(count_logn(arr, 20, 100) == 6); // 6
     assert(count_logn(arr, 1000, 2000) == 5); // 5
     assert(count_logn(arr, 84, 84) == 1); // 1
+
+    cout << __func__ << " PASSED" << endl;
+}
+
+void test_reverse_array() {
+    vector<int> arr = {1, 4, 8, 11, 21, 23, 24, 64, 70, 84};
+
+    assert((reverse_array(arr) == vector<int>{84, 70, 64, 24, 23, 21, 11, 8, 4, 1}));
 
     cout << __func__ << " PASSED" << endl;
 }

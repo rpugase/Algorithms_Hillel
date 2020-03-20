@@ -77,3 +77,12 @@ int count_logn(const std::vector<int> &arr, unsigned left_bound, unsigned right_
 
     return right_result - left_result;
 }
+
+std::vector<int> reverse_array(std::vector<int> arr) {
+    unsigned int size_array = arr.size();
+    std::vector<int> reserved = std::vector<int>(size_array);
+    for (int index = size_array - 1; index >= 0; --index) {
+        reserved[size_array - index - 1] = arr[index];
+    }
+    return reserved;
+}
