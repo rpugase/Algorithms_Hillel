@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "first_lesson.h"
+#include "lesson/first/first_lesson.h"
 
 using namespace std;
 

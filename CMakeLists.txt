@@ -3,4 +3,5 @@ project(Algorithms)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Algorithms main.cpp first_lesson.cpp first_lesson.h)
+add_executable(first first_test.cpp lesson/first/first_lesson.cpp lesson/first/first_lesson.h)
+add_executable(second second_test.cpp lesson/second/second_lesson.cpp lesson/second/second_lesson.h)
