@@ -47,7 +47,7 @@ int count_n(const std::vector<int> &arr, unsigned left_bound, unsigned right_bou
 // 4 - O(logn)
 int count_logn(const std::vector<int> &arr, unsigned left_bound, unsigned right_bound) {
     unsigned left_result = 0;
-    unsigned right_result = 0;
+    unsigned right_result = arr.size();
 
     unsigned left = 0;
     unsigned right = arr.size() - 1;

@@ -51,6 +51,7 @@ void test_count_n() {
     assert(count_n(arr, 20, 100) == 6); // 6
     assert(count_n(arr, 1000, 2000) == 5); // 5
     assert(count_n(arr, 84, 84) == 1); // 1
+    assert(count_n(arr, 2, 2002) == 16); // 16
 
     cout << __func__ << " PASSED" << endl;
 }
@@ -63,6 +64,7 @@ void test_count_logn() {
     assert(count_logn(arr, 20, 100) == 6); // 6
     assert(count_logn(arr, 1000, 2000) == 5); // 5
     assert(count_logn(arr, 84, 84) == 1); // 1
+    assert(count_logn(arr, 2, 2002) == 16); // 16
 
     cout << __func__ << " PASSED" << endl;
 }
