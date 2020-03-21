@@ -82,6 +82,25 @@ int count_logn(const std::vector<int> &arr, unsigned left_bound, unsigned right_
     return right_result - left_result;
 }
 
+// 5
+double sqrt_t(double x) {
+    double l = 0;
+    double r = x;
+
+    double eps = 1e-7;
+
+    while (l <= r) {
+        double m = (l + r) / 2;
+
+        if (fabs(x - m * m) < eps) {
+            return m;
+        }
+
+        if (m * m < x) l = m;
+        else r = m;
+    }
+}
+
 // 6
 std::vector<int> reverse_array(std::vector<int> arr) {
     unsigned int size_array = arr.size();

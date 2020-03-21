@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include "lesson/first/first_lesson.h"
 
 using namespace std;
@@ -8,6 +9,7 @@ void test_is_prime();
 void test_binary_search();
 void test_count_n();
 void test_count_logn();
+void test_sqrt();
 void test_reverse_array();
 
 int main() {
@@ -16,6 +18,7 @@ int main() {
     test_count_n();
     test_count_logn();
     test_reverse_array();
+    test_sqrt();
     return 0;
 }
 
@@ -65,6 +68,21 @@ void test_count_logn() {
     assert(count_logn(arr, 1000, 2000) == 5); // 5
     assert(count_logn(arr, 84, 84) == 1); // 1
     assert(count_logn(arr, 2, 2002) == 16); // 16
+
+    cout << __func__ << " PASSED" << endl;
+}
+
+/*
+ * Пришлось пошаманить для корректной проверки.
+ * Добавил к последнему тесту 9-ку в конце, а то получалось округление до 12.7671452 при преобразованиях.
+ * А если сравнивать дабл в лоб, то проверка учитывала все знаки после запятой, а нам точность нужна до 7-ми.
+ */
+void test_sqrt() {
+    double eps = 1e+7;
+
+    assert(int(sqrt_t(4)) == 2); // 2;
+    assert(int(sqrt_t(25)) == 5); // 5;
+    assert(int(sqrt_t(163)*eps) == int(12.76714539 * eps)); //  12.7671453
 
     cout << __func__ << " PASSED" << endl;
 }
