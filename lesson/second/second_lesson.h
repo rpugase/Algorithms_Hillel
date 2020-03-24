@@ -1,6 +1,6 @@
 #ifndef ALGORITHMS_SECOND_LESSON_H
 #define ALGORITHMS_SECOND_LESSON_H
 
-
+int collatz(int n);
 
 #endif //ALGORITHMS_SECOND_LESSON_H
