@@ -15,6 +15,16 @@ int collatz(int n, int& acc) {
     }
 }
 
+bool binary_search(const std::vector<int> &arr, int number, unsigned l, unsigned r) {
+    unsigned m = (l + r) / 2;
+
+    if (l > r) return false;
+
+    if (arr[m] == number) return true;
+
+    return (arr[m] < number) ? binary_search(arr, number, m + 1, r) : binary_search(arr, number, l, m - 1);
+}
+
 // PUBLIC
 int collatz(int n) {
     int acc = 0;
@@ -43,4 +53,8 @@ int tribonacci_recursive(int k) {
     }
 
     return tribonacci_recursive(k-1) + tribonacci_recursive(k-2) + tribonacci_recursive(k-3);
+}
+
+bool binary_search(const std::vector<int> &arr, int number) {
+    return binary_search(arr, number, 0, arr.size() - 1);
 }
