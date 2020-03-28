@@ -1,5 +1,8 @@
 #include "second_lesson.h"
 #include <vector>
+#include <string>
+
+using namespace std;
 
 // PRIVATE
 int collatz(int n, int& acc) {
@@ -15,7 +18,7 @@ int collatz(int n, int& acc) {
     }
 }
 
-bool binary_search(const std::vector<int> &arr, int number, unsigned l, unsigned r) {
+bool binary_search(const vector<int> &arr, int number, unsigned l, unsigned r) {
     unsigned m = (l + r) / 2;
 
     if (l > r) return false;
@@ -55,6 +58,22 @@ int tribonacci_recursive(int k) {
     return tribonacci_recursive(k-1) + tribonacci_recursive(k-2) + tribonacci_recursive(k-3);
 }
 
-bool binary_search(const std::vector<int> &arr, int number) {
+bool binary_search(const vector<int> &arr, int number) {
     return binary_search(arr, number, 0, arr.size() - 1);
+}
+
+int super_digit(string n, int k) {
+    if (n.size() == 1) {
+        return stoi(n);
+    }
+    int acc = 0;
+    for (char ch : n) {
+        acc += ch - '0';
+    }
+
+    acc *= k%9;
+
+    printf("%d\n", acc);
+
+    return super_digit(to_string(acc), 1);
 }
