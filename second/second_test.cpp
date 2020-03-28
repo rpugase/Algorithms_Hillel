@@ -1,7 +1,7 @@
 #include <vector>
 #include <cassert>
 #include <iostream>
-#include "lesson/second/second_lesson.h"
+#include "second_lesson.h"
 
 using namespace std;
 

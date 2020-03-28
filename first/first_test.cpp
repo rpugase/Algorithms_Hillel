@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <cmath>
-#include "lesson/first/first_lesson.h"
+#include "first_lesson.h"
 #include <cassert>
 
 using namespace std;
