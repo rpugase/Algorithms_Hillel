@@ -28,6 +28,20 @@ bool binary_search(const vector<int> &arr, int number, unsigned l, unsigned r) {
     return (arr[m] < number) ? binary_search(arr, number, m + 1, r) : binary_search(arr, number, l, m - 1);
 }
 
+int tribonacci_recursive(int k, vector<int>& temp) {
+    if (k < 2) {
+        return 0;
+    } else if (k < 4) {
+        return 1;
+    }
+
+    if (!temp[k - 1]) temp[k - 1] = tribonacci_recursive(k - 1, temp);
+    if (!temp[k - 2]) temp[k - 2] = tribonacci_recursive(k - 2, temp);
+    if (!temp[k - 3]) temp[k - 3] = tribonacci_recursive(k - 3, temp);
+
+    return temp[k-1] + temp[k-2] + temp[k-3];
+}
+
 // PUBLIC
 int collatz(int n) {
     int acc = 0;
@@ -46,16 +60,9 @@ int tribonacci_loop(int k) {
     return arr[arr.size() - 1];
 }
 
-// TODO: оптимизировать рекурсию запоминанием
 int tribonacci_recursive(int k) {
-    if (k < 2) {
-        return 0;
-    }
-    if (k < 4) {
-        return 1;
-    }
-
-    return tribonacci_recursive(k-1) + tribonacci_recursive(k-2) + tribonacci_recursive(k-3);
+    vector<int> temp = vector<int>(k);
+    return tribonacci_recursive(k, temp);
 }
 
 bool binary_search(const vector<int> &arr, int number) {
@@ -72,8 +79,6 @@ int super_digit(string n, int k) {
     }
 
     acc *= k%9;
-
-    printf("%d\n", acc);
 
     return super_digit(to_string(acc), 1);
 }
