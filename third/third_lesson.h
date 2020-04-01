@@ -1,0 +1,6 @@
+#ifndef ALGORITHMS_THIRD_LESSON_H
+#define ALGORITHMS_THIRD_LESSON_H
+
+int count(int n);
+
+#endif //ALGORITHMS_THIRD_LESSON_H
