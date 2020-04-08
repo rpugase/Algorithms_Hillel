@@ -31,8 +31,18 @@ void test_quick_sort() {
     }
 }
 
+void test_sort_string_array() {
+    vector<string> arr = {"5", "10", "123", "1"};
+    sort(arr.begin(), arr.end(), [](const string& s1, const string& s2) {
+        return stoi(s1) < stoi(s2);
+    });
+    assert((arr == vector<string>{"1", "5", "10", "123"}));
+    cout << __func__ << " PASSED" << endl;
+}
+
 int main() {
     test_count();
-    test_quick_sort();
+//    test_quick_sort();
+    test_sort_string_array();
     return 0;
 }

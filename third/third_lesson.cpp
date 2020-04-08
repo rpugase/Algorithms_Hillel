@@ -26,8 +26,6 @@ vector<int> quick_sort(vector<int>& arr, int l, int r) {
     const int r1 = r;
     int x = arr[(l + r) / 2];
 
-    printf("%d %d\n", l, r);
-
     while (l <= r) {
         while (arr[l] < x) l++;
         while (arr[r] > x) r--;
