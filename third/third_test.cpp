@@ -40,9 +40,34 @@ void test_sort_string_array() {
     cout << __func__ << " PASSED" << endl;
 }
 
+void test_sort_time() {
+    vector<vector<int>> times = {
+            {10, 20, 30},
+            {7, 30, 00},
+            {23, 59, 59},
+            {13, 30, 30}
+    };
+
+    vector<vector<int>> result = {
+            {7, 30, 00},
+            {10, 20, 30},
+            {13, 30, 30},
+            {23, 59, 59}
+    };
+
+    sort(times.begin(), times.end(), [] (vector<int>& a, vector<int>& b) {
+        return a[0] < b[0];
+    });
+
+    assert(times == result);
+
+    cout << __func__ << " PASSED" << endl;
+}
+
 int main() {
-    test_count();
+//    test_count();
 //    test_quick_sort();
-    test_sort_string_array();
+//    test_sort_string_array();
+    test_sort_time();
     return 0;
 }
