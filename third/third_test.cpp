@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// 1
 void test_count() {
     assert(count(21) == 3);
     assert(count(6) == 1);
@@ -13,6 +14,7 @@ void test_count() {
     cout << __func__ << " PASSED" << endl;
 }
 
+// 2
 void test_quick_sort() {
     vector<double> lengths = {10, 100, 1e3, 1e5, 1e6, 1e7};
     for (int length : lengths) {
@@ -31,6 +33,7 @@ void test_quick_sort() {
     }
 }
 
+// 3
 void test_sort_string_array() {
     vector<string> arr = {"5", "10", "123", "1"};
     sort(arr.begin(), arr.end(), [](const string& s1, const string& s2) {
@@ -40,6 +43,7 @@ void test_sort_string_array() {
     cout << __func__ << " PASSED" << endl;
 }
 
+// 4
 void test_sort_time() {
     vector<vector<int>> times = {
             {10, 20, 30},
@@ -66,10 +70,30 @@ void test_sort_time() {
     cout << __func__ << " PASSED" << endl;
 }
 
+//5
+void test_sort_student() {
+    vector<string> input = {
+            "Sidorov","Sidor","9A","20.07.93",
+            "Petrov","Petr","9B","23.10.92",
+            "Ivanov","Ivan","9A","10.04.93"
+    };
+
+    vector<string> result = {
+            "9A Ivanov Ivan 10.04.93",
+            "9A Sidorov Sidor 20.07.93",
+            "9B Petrov Petr 23.10.92"
+    };
+
+    assert(sort_students(input) == result);
+
+    cout << __func__ << " PASSED" << endl;
+}
+
 int main() {
 //    test_count();
 //    test_quick_sort();
 //    test_sort_string_array();
-    test_sort_time();
+//    test_sort_time();
+    test_sort_student();
     return 0;
 }
